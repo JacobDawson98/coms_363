@@ -86,33 +86,30 @@ WHERE
             Person))
 ORDER BY DOB DESC;
 
-/* /1* Item 20. List the IDs, DOB, and Names of Persons who are neither a student */
-/* nor a instructor. *1/ */
-/* TODO */
+/* Item 20. List the IDs, DOB, and Names of Persons who are neither a student
+nor a instructor. */
 SELECT
     ID, DOB, Name
 FROM
-    Person p,
-    Student s,
-    Instructor i
+    Person p
 WHERE
     p.ID NOT IN (SELECT
             StudentID
         FROM
-            Student s2)
-        OR p.ID NOT IN (SELECT
+            Student)
+        AND p.ID NOT IN (SELECT
             InstructorID
         FROM
-            Instructor i2);
+            Instructor);
 
-/* /1* Item 21. For each instructor list his / her name and the number of */
-/* students he / she mentors. *1/ */
-/* SELECT */
-/*     Name, COUNT(*) */
-/* FROM */
-/*     Instructor i */
-/*         INNER JOIN */
-/*     Person AS InstructorInfo ON InstructorInfo.ID = i.InstructorID */
-/*         INNER JOIN */
-/*     Student AS Mentees ON Mentees.MentorID = i.InstructorID */
-/* GROUP BY Name; */
+/* Item 21. For each instructor list his / her name and the number of
+students he / she mentors. */
+SELECT
+    Name, COUNT(*)
+FROM
+    Instructor i
+        INNER JOIN
+    Person AS InstructorInfo ON InstructorInfo.ID = i.InstructorID
+        INNER JOIN
+    Student AS Mentees ON Mentees.MentorID = i.InstructorID
+GROUP BY Name;
