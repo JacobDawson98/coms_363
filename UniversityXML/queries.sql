@@ -1,6 +1,6 @@
 /* Item 13. List the IDs of students and the IDs of their Mentors for
 students who are junior or senior having a GPA above 3.8. */
-SELECT 
+SELECT
     MentorID, StudentID
 FROM
     Student s
@@ -34,8 +34,7 @@ WHERE
 
 /* Item 16. Find the total salary of all instructors who are not offering
 any course. */
-
-SELECT 
+SELECT
     SUM(DISTINCT Salary) AS 'Total Salary'
 FROM
     Instructor i,
@@ -56,45 +55,64 @@ WHERE
 
 /* Item 18. List the names and rank of instructors who neither offer a course
 nor mentor a student. */
-SELECT 
+/* Double check: May be correct */
+SELECT DISTINCT
+    p.Name, i.Rank
+FROM
+    Instructor i,
+    Person p
+WHERE
+    i.InstructorID NOT IN
+        (SELECT MentorID FROM Student) AND
+    i.InstructorID NOT IN
+        (SELECT InstructorID FROM Offering);
+
+    /* i.InstructorID = p.ID */
+    /*     AND NOT i.InstructorID = o.InstructorID */
+    /*     AND NOT i.InstructorID = s.MentorID; */
+
+/* Item 19. Find the IDs, names and DOB of the youngest student(s). */
+/* Double CHECK WITH TA */
+SELECT
     ID, Name, DOB
 FROM
     Person p,
     Student s
 WHERE
     p.ID = s.StudentID
-        AND (DOB = (SELECT 
+        AND (DOB = (SELECT
             MIN(p.DOB)
         FROM
             Person))
 ORDER BY DOB DESC;
 
-/* Item 20. List the IDs, DOB, and Names of Persons who are neither a student
-nor a instructor. */
-SELECT 
+/* /1* Item 20. List the IDs, DOB, and Names of Persons who are neither a student */
+/* nor a instructor. *1/ */
+/* TODO */
+SELECT
     ID, DOB, Name
 FROM
     Person p,
     Student s,
     Instructor i
 WHERE
-    p.ID NOT IN (SELECT 
+    p.ID NOT IN (SELECT
             StudentID
         FROM
             Student s2)
-        OR p.ID NOT IN (SELECT 
+        OR p.ID NOT IN (SELECT
             InstructorID
         FROM
             Instructor i2);
 
-/* Item 21. For each instructor list his / her name and the number of
-students he / she mentors. */
-SELECT 
-    Name, COUNT(*)
-FROM
-    Instructor i
-        INNER JOIN
-    Person AS InstructorInfo ON InstructorInfo.ID = i.InstructorID
-        INNER JOIN
-    Student AS Mentees ON Mentees.MentorID = i.InstructorID
-GROUP BY Name;
+/* /1* Item 21. For each instructor list his / her name and the number of */
+/* students he / she mentors. *1/ */
+/* SELECT */
+/*     Name, COUNT(*) */
+/* FROM */
+/*     Instructor i */
+/*         INNER JOIN */
+/*     Person AS InstructorInfo ON InstructorInfo.ID = i.InstructorID */
+/*         INNER JOIN */
+/*     Student AS Mentees ON Mentees.MentorID = i.InstructorID */
+/* GROUP BY Name; */
