@@ -1,57 +1,58 @@
 USE db363project;
 
 CREATE TABLE IF NOT EXISTS Person (
-    Name char (20),
-    ID char (9) not null,
-    Address char (30),
-    DOB date,
-    Primary key (ID)
+    Name CHAR(20),
+    ID CHAR(9) NOT NULL,
+    Address CHAR(30),
+    DOB DATE,
+    PRIMARY KEY (ID)
 );
 
 CREATE TABLE IF NOT EXISTS Instructor (
-    Rank char (12),
-    Salary int,
-    InstructorID char (9) NOT NULL references Person,
-    Primary key (InstructorID)
+    Rank CHAR(12),
+    Salary INT,
+    InstructorID CHAR(9) NOT NULL REFERENCES Person,
+    PRIMARY KEY (InstructorID)
 );
 
 CREATE TABLE IF NOT EXISTS Student (
-    Classification char (10),
-    GPA double,
-    CreditHours int,
-    MentorID char (9) NOT NULL references Instructor,
-    StudentID char (9) NOT NULL references Person,
-    Primary key (StudentID)
+    Classification CHAR(10),
+    GPA DOUBLE,
+    CreditHours INT,
+    MentorID CHAR(9) NOT NULL REFERENCES Instructor,
+    StudentID CHAR(9) NOT NULL REFERENCES Person,
+    PRIMARY KEY (StudentID)
 );
 
 CREATE TABLE IF NOT EXISTS Course (
-    CourseCode char (6) NOT NULL,
-    CourseName char(50),
-    PreReq char(6)
+    CourseCode CHAR(6) NOT NULL,
+    CourseName CHAR(50),
+    PreReq CHAR(6)
 );
 
 CREATE TABLE IF NOT EXISTS Offering (
-    CourseCode char (6) NOT NULL,
-    SectionNo int NOT NULL,
-    InstructorID char (9) NOT NULL references Instructor,
-    Primary key(CourseCode, SectionNo)
+    CourseCode CHAR(6) NOT NULL,
+    SectionNo INT NOT NULL,
+    InstructorID CHAR(9) NOT NULL REFERENCES Instructor,
+    PRIMARY KEY (CourseCode , SectionNo)
 );
 
 CREATE TABLE IF NOT EXISTS Enrollment (
-    CourseCode char(6) NOT NULL references Offering,
-    SectionNo int NOT NULL references Offering,
-    StudentID char(9) NOT NULL references Student,
-    Grade char(4) NOT NULL,
-    primary key (CourseCode, StudentID),
-    foreign key (CourseCode, SectionNo) references Offering(CourseCode, SectionNo)
+    CourseCode CHAR(6) NOT NULL REFERENCES Offering,
+    SectionNo INT NOT NULL REFERENCES Offering,
+    StudentID CHAR(9) NOT NULL REFERENCES Student,
+    Grade CHAR(4) NOT NULL,
+    PRIMARY KEY (CourseCode , StudentID),
+    FOREIGN KEY (CourseCode , SectionNo)
+        REFERENCES Offering (CourseCode , SectionNo)
 );
 
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Person.xml'  INTO TABLE Person ROWS IDENTIFIED BY '<Person>';
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Instructor.xml' INTO TABLE Instructor ROWS IDENTIFIED BY '<Instructor>';
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Student.xml' INTO TABLE Student ROWS IDENTIFIED BY '<Student>';
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Course.xml' INTO TABLE Course ROWS IDENTIFIED BY '<Course>';
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Offering.xml' INTO TABLE Offering ROWS IDENTIFIED BY '<Offering>';
-LOAD XML LOCAL INFILE '/Users/jacobd/Projects/UniversityXML/Enrollment.xml' INTO TABLE Enrollment ROWS IDENTIFIED BY '<Enrollment>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Person.xml'  INTO TABLE Person ROWS IDENTIFIED BY '<Person>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Instructor.xml' INTO TABLE Instructor ROWS IDENTIFIED BY '<Instructor>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Student.xml' INTO TABLE Student ROWS IDENTIFIED BY '<Student>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Course.xml' INTO TABLE Course ROWS IDENTIFIED BY '<Course>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Offering.xml' INTO TABLE Offering ROWS IDENTIFIED BY '<Offering>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Enrollment.xml' INTO TABLE Enrollment ROWS IDENTIFIED BY '<Enrollment>';
 
 /* DROP TABLE Enrollment; */
 /* DROP TABLE Offering; */
