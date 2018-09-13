@@ -113,3 +113,14 @@ FROM
         INNER JOIN
     Student AS Mentees ON Mentees.MentorID = i.InstructorID
 GROUP BY Name;
+
+/* Item 22. List the number of students and average GPA for each
+classification. Your query should not use constants such as "Freshman". */
+SELECT
+    Classification,
+    COUNT(*),
+    AVG(GPA)
+FROM
+    Student
+GROUP BY
+    Classification;
