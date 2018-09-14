@@ -124,3 +124,16 @@ FROM
     Student
 GROUP BY
     Classification;
+
+/* Item 23. Report the course(s) with lowest enrollments. You should output
+the course code and the number of enrollments. */
+SELECT
+    CourseCode,
+    COUNT(CourseCode)
+FROM
+	Enrollment
+GROUP BY
+	CourseCode
+HAVING
+	COUNT(CourseCode) = (SELECT MIN(COUNT(CourseCode))); 
+    
