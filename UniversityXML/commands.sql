@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Person (
 );
 
 CREATE TABLE IF NOT EXISTS Instructor (
-    Rank CHAR(12),
+    Title CHAR(12),
     Salary INT,
     InstructorID CHAR(9) NOT NULL REFERENCES Person,
     PRIMARY KEY (InstructorID)
