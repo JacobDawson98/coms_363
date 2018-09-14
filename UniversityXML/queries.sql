@@ -57,7 +57,7 @@ WHERE
 nor mentor a student. */
 /* Double check: May be correct */
 SELECT DISTINCT
-    p.Name, i.Rank
+    p.Name, i.Title
 FROM
     Instructor i,
     Person p
@@ -127,13 +127,22 @@ GROUP BY
 
 /* Item 23. Report the course(s) with lowest enrollments. You should output
 the course code and the number of enrollments. */
-SELECT
-    CourseCode,
-    COUNT(CourseCode)
+SELECT 
+    CourseCode, MIN(enrollCount) AS 'enrollCount'
 FROM
-	Enrollment
-GROUP BY
-	CourseCode
-HAVING
-	COUNT(CourseCode) = (SELECT MIN(COUNT(CourseCode))); 
-    
+    (SELECT 
+        CourseCode, COUNT(*) AS 'enrollCount'
+    FROM
+        Enrollment
+    GROUP BY CourseCode
+    ORDER BY enrollCount) a;
+/* SELECT */
+/*     CourseCode, */
+/*     COUNT(CourseCode) */
+/* FROM */
+/* 	Enrollment */
+/* GROUP BY */
+/* 	CourseCode */
+/* HAVING */
+/* 	COUNT(CourseCode) = (SELECT MIN(COUNT(CourseCode))); */
+
