@@ -127,22 +127,21 @@ GROUP BY
 
 /* Item 23. Report the course(s) with lowest enrollments. You should output
 the course code and the number of enrollments. */
-SELECT 
+SELECT
     CourseCode, MIN(enrollCount) AS 'enrollCount'
 FROM
-    (SELECT 
+    (SELECT
         CourseCode, COUNT(*) AS 'enrollCount'
     FROM
         Enrollment
     GROUP BY CourseCode
     ORDER BY enrollCount) a;
-/* SELECT */
-/*     CourseCode, */
-/*     COUNT(CourseCode) */
-/* FROM */
-/* 	Enrollment */
-/* GROUP BY */
-/* 	CourseCode */
-/* HAVING */
-/* 	COUNT(CourseCode) = (SELECT MIN(COUNT(CourseCode))); */
 
+/* Item 24. List the IDs and Mentor IDs of students who are taking some course,
+offered by their mentor. */
+SELECT DISTINCT
+    MentorID, s.StudentID
+FROM
+    Student s, Enrollment e, Offering o
+WHERE
+    s.StudentID = e.StudentID AND o.InstructorID = s.MentorID;
