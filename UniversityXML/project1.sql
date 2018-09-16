@@ -1,3 +1,87 @@
+/* Jacob Dawson, netid: dawson */
+/* Christian Eggers, netid: linko */
+
+USE db363project;
+
+/* Item 1: The Person table. The Person table consists of the attributes Name, ID, Address, and DOB (date of birth). */
+/* The types of these attributes are char(20), char(9), char(30), and date, respectively. ID will be the primary key of the table, */
+/* and it cannot have a null value. These requirements could be expressed in terms of the following create statement: */
+CREATE TABLE IF NOT EXISTS Person (
+    Name CHAR(20),
+    ID CHAR(9) NOT NULL,
+    Address CHAR(30),
+    DOB DATE,
+    PRIMARY KEY (ID)
+);
+
+/* Item 2: The Instructor table. The Instructor table consists of InstructorID, a 9 character non-null attribute that serves as the primary */
+/* key and also references ID in the Person table. Other attributes are Rank and Salary. Rank can have up to 12 characters and Salary is */
+/* an integer. */
+CREATE TABLE IF NOT EXISTS Instructor (
+    Title CHAR(12),
+    Salary INT,
+    InstructorID CHAR(9) NOT NULL REFERENCES Person,
+    PRIMARY KEY (InstructorID)
+);
+
+/* Item 3: The Student table. The Student table has StudentID that has same requirements as InstructorID. The Student table has four */
+/* additional attributes: Classification that is a string of up to 10 characters, GPA that is a double, MentorID, consisting of 9 characters, */
+/* references InstructorID in Instructor table, and CreditHours that is an integer. */
+CREATE TABLE IF NOT EXISTS Student (
+    Classification CHAR(10),
+    GPA DOUBLE,
+    CreditHours INT,
+    MentorID CHAR(9) NOT NULL REFERENCES Instructor,
+    StudentID CHAR(9) NOT NULL REFERENCES Person,
+    PRIMARY KEY (StudentID)
+);
+
+/* Item 4: The Course table. The Course table has a 6 character non-null attribute called CourseCode, a 50 character CourseName, */
+/* and 6 character PreReq, representing prerequisite of a course. Note that a course can have several prerequisites. */
+/* This is why CourseCode alone cannot be a key. If a course has no prerequisites, the string �None� is entered. For a given course a tuple, */
+/* will exist for every prerequisite for the course. */
+CREATE TABLE IF NOT EXISTS Course (
+    CourseCode CHAR(6) NOT NULL,
+    CourseName CHAR(50),
+    PreReq CHAR(6)
+);
+
+/* Item 5: The Offering table. The Offering table contains three non-null attributes CourseCode, SectionNo, and InstructorID that are of */
+/* type char(6), int, and char(9). A CourseCode in the Offering table should appear in the Course table. This could be enforced by an */
+/* integrity constraint of the form "check (CourseCode in (select ...))". But it seems that Microsoft Access or the ODBC driver that we are */
+/* using will not support it. Therefore, we will ignore this requirement. The InstructorID references InstructorID in Instructor table. */
+/* The primary key for this table will be formed using CourseCode and SectionNo attributes. */
+CREATE TABLE IF NOT EXISTS Offering (
+    CourseCode CHAR(6) NOT NULL,
+    SectionNo INT NOT NULL,
+    InstructorID CHAR(9) NOT NULL REFERENCES Instructor,
+    PRIMARY KEY (CourseCode , SectionNo)
+);
+
+/* Item 6: The Enrollment table. The Enrollment table consists of four non-null attributes CourseCode, SectionNo, StudentID, and Grade, */
+/* with types char(6), int, char(9), and char(4), respectively. CourseCode and SectionNo reference the Offering table. */
+/* StudentID references the Student table. The primary key for this table will consist of CourseCode and StudentID attributes. */
+/* SectionNo is not included in the primary key. (Why?) Note that we would expect that a CourseCode, SectionNo pair in the Offering table */
+/* must occur in the Course table. This requirement will not be captured by our design. For your reference, the create statement for */
+/* Enrollment table is given below. */
+CREATE TABLE IF NOT EXISTS Enrollment (
+    CourseCode CHAR(6) NOT NULL REFERENCES Offering,
+    SectionNo INT NOT NULL REFERENCES Offering,
+    StudentID CHAR(9) NOT NULL REFERENCES Student,
+    Grade CHAR(4) NOT NULL,
+    PRIMARY KEY (CourseCode , StudentID),
+    FOREIGN KEY (CourseCode , SectionNo)
+        REFERENCES Offering (CourseCode , SectionNo)
+);
+
+/* Items 7-12. Load Person, Instructor, Student, Course, Offering, and Enrollment tables. */
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Person.xml'  INTO TABLE Person ROWS IDENTIFIED BY '<Person>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Instructor.xml' INTO TABLE Instructor ROWS IDENTIFIED BY '<Instructor>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Student.xml' INTO TABLE Student ROWS IDENTIFIED BY '<Student>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Course.xml' INTO TABLE Course ROWS IDENTIFIED BY '<Course>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Offering.xml' INTO TABLE Offering ROWS IDENTIFIED BY '<Offering>';
+LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Enrollment.xml' INTO TABLE Enrollment ROWS IDENTIFIED BY '<Enrollment>';
+
 /* Item 13. List the IDs of students and the IDs of their Mentors for
 students who are junior or senior having a GPA above 3.8. */
 SELECT
