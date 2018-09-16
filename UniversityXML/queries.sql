@@ -127,15 +127,15 @@ GROUP BY
 
 /* Item 23. Report the course(s) with lowest enrollments. You should output
 the course code and the number of enrollments. */
-/* SELECT */
-/*     CourseCode, MIN(enrollCount) AS 'enrollCount' */
-/* FROM */
-/*     (SELECT */
-/*         CourseCode, COUNT(*) AS 'enrollCount' */
-/*     FROM */
-/*         Enrollment */
-/*     GROUP BY CourseCode */
-/*     ORDER BY enrollCount) a; */
+SELECT
+    CourseCode, MIN(enrollCount) AS 'enrollCount'
+FROM
+    (SELECT
+        CourseCode, COUNT(*) AS 'enrollCount'
+    FROM
+        Enrollment
+    GROUP BY CourseCode
+    ORDER BY enrollCount) a;
 
 /* Item 24. List the IDs and Mentor IDs of students who are taking some course,
 offered by their mentor. */
@@ -168,23 +168,83 @@ INSERT INTO Enrollment (CourseCode, SectionNo, Grade, StudentID)
 INSERT INTO Enrollment (CourseCode, SectionNo, Grade, StudentID)
     VALUES('CS330', 1, 'A-', '480293439');
 
-SELECT 
+SELECT
     *
 FROM
     Person P
 WHERE
     P.Name = 'Briggs Jason';
 
-SELECT 
+SELECT
     *
 FROM
     Student S
 WHERE
     S.StudentID = '480293439';
 
-SELECT 
+SELECT
     *
 FROM
     Enrollment E
 WHERE
     E.StudentID = '480293439';
+
+/* Item 27. Next, delete the records of students from the database who have a GPA less than 0.5. Note that it is not sufficient */
+/* to delete these records from Student table; you have to delete them from the Enrollment table first. (Why?) On the  other hand, */
+/* do not delete these students from the Person table. */
+DELETE FROM Enrollment
+WHERE
+    StudentID IN (SELECT
+        StudentID
+    FROM
+        Student s
+    WHERE
+        s.GPA < 0.5);
+
+DELETE FROM Student
+WHERE
+   GPA < 0.5;
+
+Select *
+From Student S
+Where S.GPA < 0.5;
+
+/* Item 29. Insert the following information into the Person table. Name: Trevor Horns; ID: 000957303; Address: 23 Canberra Street; */
+/* date of birth: 23rd November 1964. Then execute a query to verify that the record has been inserted. */
+INSERT INTO Person (Name, ID, Address, DOB)
+    VALUES ('Horns Trevor', '000957303', '23 Canberra Street', '1964/11/23');
+SELECT *
+FROM Person p
+WHERE p.ID = '000957303';
+
+/* Item 30. Delete the record for the student Jan Austin from Enrollment and Student tables. Her record from the Person table
+should not be deleted. */
+SELECT p.Name
+FROM Student s, Person p
+WHERE s.StudentID = p.ID AND p.Name = 'Jan Austin';
+
+SELECT s.StudentID
+FROM Student s, Person p
+WHERE p.Name = 'Jan Austin' AND s.StudentID = p.ID;
+
+DELETE FROM Enrollment
+WHERE
+    StudentID IN (SELECT ID
+    FROM
+        Person p
+    WHERE p.Name = 'Jan Austin');
+
+DELETE FROM Student
+WHERE
+    StudentID IN (SELECT ID
+    FROM
+        Person p
+    WHERE p.Name = 'Jan Austin');
+
+SELECT p.Name
+FROM  Person p
+WHERE p.Name = 'Jan Austin';
+
+SELECT s.StudentID
+FROM Student s, Person p
+WHERE p.Name = 'Jan Austin' AND s.StudentID = p.ID;
