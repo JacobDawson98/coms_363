@@ -154,3 +154,37 @@ FROM
     Student s, Person p
 WHERE
     s.Classification = 'Freshman' AND YEAR(p.DOB) >= 1976 AND s.StudentID = p.ID;
+
+/* Item 26. Insert following information in the database: Student name: Briggs Jason; ID: 480293439; */
+/* address: 215 North Hyland Avenue; date of birth: 15th January 1975. He is a junior with a GPA of 3.48 and with 75 credit hours. */
+/* His mentor is the instructor with InstructorID 201586985. Jason Briggs is taking two courses CS311 Section 2 and CS330 Section 1. */
+/* He has an 'A' on CS311 and 'A-' on CS330. */
+INSERT INTO Person (Name, ID, Address, DOB)
+   VALUES ('Briggs Jason', '480293439', '215 North Hyland Avenue', '1975/1/15');
+INSERT INTO Student (GPA, CreditHours, Classification, MentorID, StudentID)
+    VALUES(3.48, 75, 'Junior', '201586985', '480293439');
+INSERT INTO Enrollment (CourseCode, SectionNo, Grade, StudentID)
+    VALUES('CS311', 2, 'A', '480293439');
+INSERT INTO Enrollment (CourseCode, SectionNo, Grade, StudentID)
+    VALUES('CS330', 1, 'A-', '480293439');
+
+SELECT 
+    *
+FROM
+    Person P
+WHERE
+    P.Name = 'Briggs Jason';
+
+SELECT 
+    *
+FROM
+    Student S
+WHERE
+    S.StudentID = '480293439';
+
+SELECT 
+    *
+FROM
+    Enrollment E
+WHERE
+    E.StudentID = '480293439';

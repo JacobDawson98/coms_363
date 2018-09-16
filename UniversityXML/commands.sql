@@ -53,10 +53,3 @@ LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Student.xml
 LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Course.xml' INTO TABLE Course ROWS IDENTIFIED BY '<Course>';
 LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Offering.xml' INTO TABLE Offering ROWS IDENTIFIED BY '<Offering>';
 LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Enrollment.xml' INTO TABLE Enrollment ROWS IDENTIFIED BY '<Enrollment>';
-
-/* DROP TABLE Enrollment; */
-/* DROP TABLE Offering; */
-/* DROP TABLE Course; */
-/* DROP TABLE Student; */
-/* DROP TABLE Instructor; */
-/* DROP TABLE Person; */
