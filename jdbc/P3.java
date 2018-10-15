@@ -21,7 +21,6 @@ public class P3 {
 			// Connect to the database
 			Connection conn1;
 			String dbUrl = "YOUR URL";
-			int index = dbUrl.lastIndexOf('/') + 1;
 			String user = "YOUR USERNAME";
 			String password = "YOUR PASSWORD";
 			conn1 = DriverManager.getConnection(dbUrl, user, password);
