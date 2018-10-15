@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS Student (
 CREATE TABLE IF NOT EXISTS Course (
     CourseCode CHAR(6) NOT NULL,
     CourseName CHAR(50),
-    PreReq CHAR(6)
+    PreReq CHAR(6),
+    PRIMARY KEY (CourseCode)
 );
 
 CREATE TABLE IF NOT EXISTS Offering (
@@ -46,6 +47,7 @@ CREATE TABLE IF NOT EXISTS Enrollment (
     FOREIGN KEY (CourseCode , SectionNo)
         REFERENCES Offering (CourseCode , SectionNo)
 );
+
 
 LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Person.xml'  INTO TABLE Person ROWS IDENTIFIED BY '<Person>';
 LOAD XML LOCAL INFILE '/Users/jacobd/Projects/coms_363/UniversityXML/Instructor.xml' INTO TABLE Instructor ROWS IDENTIFIED BY '<Instructor>';

@@ -1,0 +1,58 @@
+*** Connected to the database ***
+Faculty Salaries:
+Min Tuyet 120000
+Seth Carney 100000
+Chad Moore 100000
+Darren Lehmann 80000
+Graeme Dilly 120000
+John Bracewell 100000
+Gavin Larson 80000
+Philip Richards 80000
+Ricky Ponting 120000
+Richard Ellison 100000
+Total Salary of all faculty: 1000000
+
+Created Table MeritList
+StudentID: 164776911, MentorID: 201586985, GPA: 4, Classification: Junior
+StudentID: 191083779, MentorID: 685744439, GPA: 4, Classification: Senior
+StudentID: 212976207, MentorID: 555010131, GPA: 4, Classification: Freshman
+StudentID: 712524758, MentorID: 555010131, GPA: 4, Classification: Freshman
+StudentID: 812073765, MentorID: 386167477, GPA: 4, Classification: Senior
+StudentID: 907425648, MentorID: 555010131, GPA: 4, Classification: Sophomore
+StudentID: 952145559, MentorID: 836826630, GPA: 4, Classification: Sophomore
+StudentID: 956234659, MentorID: 997111094, GPA: 4, Classification: Senior
+StudentID: 712952591, MentorID: 463249547, GPA: 3.98, Classification: Junior
+StudentID: 973071948, MentorID: 466388906, GPA: 3.98, Classification: Freshman
+StudentID: 328718420, MentorID: 997111094, GPA: 3.96, Classification: Sophomore
+StudentID: 483223789, MentorID: 555010131, GPA: 3.96, Classification: Sophomore
+StudentID: 273277984, MentorID: 386167477, GPA: 3.9, Classification: Sophomore
+StudentID: 477453864, MentorID: 961874958, GPA: 3.9, Classification: Freshman
+StudentID: 696302689, MentorID: 463249547, GPA: 3.9, Classification: Junior
+StudentID: 916916939, MentorID: 696335701, GPA: 3.9, Classification: Junior
+StudentID: 164500920, MentorID: 201586985, GPA: 3.89, Classification: Senior
+StudentID: 315967897, MentorID: 463249547, GPA: 3.89, Classification: Freshman
+StudentID: 419180204, MentorID: 466388906, GPA: 3.89, Classification: Junior
+StudentID: 432180765, MentorID: 201586985, GPA: 3.89, Classification: Freshman
+StudentID: 466094162, MentorID: 555010131, GPA: 3.89, Classification: Senior
+StudentID: 483727101, MentorID: 201586985, GPA: 3.89, Classification: Senior
+StudentID: 664353912, MentorID: 466388906, GPA: 3.89, Classification: Senior
+StudentID: 722131306, MentorID: 201586985, GPA: 3.89, Classification: Senior
+StudentID: 785273479, MentorID: 685744439, GPA: 3.89, Classification: Freshman
+StudentID: 803024290, MentorID: 997111094, GPA: 3.89, Classification: Sophomore
+StudentID: 867910658, MentorID: 386167477, GPA: 3.89, Classification: Junior
+StudentID: 965882492, MentorID: 961874958, GPA: 3.89, Classification: Junior
+
+Faculty Salaries:
+Min Tuyet 132000
+Seth Carney 110000
+Chad Moore 108000
+Darren Lehmann 88000
+Graeme Dilly 132000
+John Bracewell 110000
+Gavin Larson 86400
+Philip Richards 84800
+Ricky Ponting 129600
+Richard Ellison 110000
+Total Salary of all faculty: 1090800
+
+Dropped table MeritList
