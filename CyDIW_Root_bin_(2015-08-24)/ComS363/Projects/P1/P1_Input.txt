@@ -107,11 +107,21 @@ $Saxon:>
         <Students>
             <classification>{$classification}</classification>
             <StudentList> {
-               for $student in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[Classification=$classification],
-                   $name in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID=$student/StudentID]
+               for $student in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[Classification=$classification]
                return
-               <E><NameClass>{$name/Name, $student/Classification}</NameClass></E>
+               <Student>
+                   {$student/StudentID},
+                   {$student/GPA}>,
+                   {$student/MentorID},
+                   {$student/CreditHours}
+               </Student>
             } </StudentList>
         </Students>
         } </StudentAndClass>;
+</showtext>
+
+// Item 7. List the Name, and Rank of faculty who have a salary of 100K or higher.;
+<showtext>
+$OOXQuery:>
+
 </showtext>
