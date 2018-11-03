@@ -1,0 +1,117 @@
+// Item 1. List Names of students and their mentors.;
+<showtext>
+$Saxon:>
+<StudentAndMentor>
+{
+    for $student in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student,
+        $mentor in doc("ComS363/Projects/Datasets/DataForPart1/Instructor.xml")//Instructor[InstructorID = $student/MentorID],
+        $studentPerson in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID = $student/StudentID],
+        $mentorPerson in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID = $mentor/InstructorID]
+    return <StudentMentor>{<StudentName>{$studentPerson/Name}</StudentName>,<MentorName>{$mentorPerson/Name}</MentorName>}</StudentMentor>
+}
+</StudentAndMentor>;
+</showtext>
+
+
+// Item 2. For each classification, list the classification and the average GPA of students with that;
+// classification. Your query should not use any constants, such as "Freshman".;
+<showtext>
+$Saxon:>
+    <ClassAndGPA>
+    {
+        for $classification in distinct-values(doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student/Classification)
+        return
+        <ClassificationAvg>
+        {
+            <Classification>
+                {$classification}
+            </Classification>,
+            <AvgGPA>
+            {
+                avg(doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[Classification = $classification]/GPA)
+            }
+            </AvgGPA>
+        }
+        </ClassificationAvg>
+    }
+    </ClassAndGPA>;
+</showtext>
+
+// Item 3. For each enrolled student, list his/her name and his/her mentor's name.;
+<showtext>
+$Saxon:>
+    <EnrolledStudentAndMentor>
+    {
+        for $enrollment in distinct-values(doc("ComS363/Projects/Datasets/DataForPart1/Enrollment.xml")//Enrollment/StudentID),
+            $student in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[StudentID = $enrollment],
+            $mentor in doc("ComS363/Projects/Datasets/DataForPart1/Instructor.xml")//Instructor[InstructorID = $student/MentorID],
+            $studentPerson in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID = $student/StudentID],
+            $mentorPerson in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID = $mentor/InstructorID]
+        return
+        <StudentAndMentor>
+        {
+            <StudentName>{$studentPerson/Name}</StudentName>,
+            <MentorName>{$mentorPerson/Name}</MentorName>
+        }
+        </StudentAndMentor>
+    }
+    </EnrolledStudentAndMentor>;
+</showtext>
+
+
+// Item 4. List the Names of students who have at least one A in courses they are enrolled in.
+// (Do not consider A- as an A.);
+<showtext>
+$Saxon:>
+    <StudentsWithAnA>
+    {
+        for $grades in doc("ComS363/Projects/Datasets/DataForPart1/Enrollment.xml")//Enrollment[Grade = "A"],
+            $studentsWithA in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[StudentID = $grades/StudentID],
+            $person in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID = $studentsWithA/StudentID]
+        return
+        <AStudent>
+        {
+           <StudentName>{$person/Name}</StudentName>
+        }
+        </AStudent>
+    }
+    </StudentsWithAnA>;
+</showtext>
+
+
+// Item 5. List the course codes of courses that are prerequisites for the course CS311.;
+<showtext>
+$Saxon:>
+    <CoursesRequireCS311>
+    {
+       for $coursesWithCS311 in doc("ComS363/Projects/Datasets/DataForPart1/Course.xml")//Course[PreReq = "CS311"]
+       return
+       <Course>
+       {
+            <CourseCode>{$coursesWithCS311/CourseCode}</CourseCode>
+       }
+       </Course>
+    }
+    </CoursesRequireCS311>;
+</showtext>
+
+
+// Item 6. Restructure Student.xml by classification. There should be one element per classification in;
+// which the remaining information about students should be included in one element per student.;
+// (Tip: Make sure you understand Slide 12.8 titled Restructuring in XQuery).;
+<showtext>
+$Saxon:>
+    <StudentAndClass> {
+        for $classification in distinct-values(doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student/Classification)
+        return
+        <Students>
+            <classification>{$classification}</classification>
+            <StudentList> {
+               for $student in doc("ComS363/Projects/Datasets/DataForPart1/Student.xml")//Student[Classification=$classification],
+                   $name in doc("ComS363/Projects/Datasets/DataForPart1/Person.xml")//Person[ID=$student/StudentID]
+               return
+               <E><NameClass>{$name/Name, $student/Classification}</NameClass></E>
+            } </StudentList>
+        </Students>
+        } </StudentAndClass>;
+</showtext>
