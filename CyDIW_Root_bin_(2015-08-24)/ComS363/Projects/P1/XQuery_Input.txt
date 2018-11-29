@@ -1,3 +1,6 @@
+// Authors: Jacob Dawson, dawson;
+// Christian Eggers, linko;
+
 // Item 1. List Names of students and their mentors.;
 <showtext>
 $Saxon:>
@@ -123,5 +126,49 @@ $Saxon:>
 // Item 7. List the Name, and Rank of faculty who have a salary of 100K or higher.;
 <showtext>
 $OOXQuery:>
+<Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> {
+        for $faculty in doc("ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml")//Faculty
+        where $faculty/Salary >= 100000
+        return <Faculty> { $faculty.Name, $faculty.Rank } </Faculty>
+ } </Item>;
+</showtext>
 
+// Item 8. List Names of students and their mentors.;
+// (Note that if $s is a student, $s.Mentor will return a faculty element);
+<showtext>
+$OOXQuery:>
+<Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> {
+    for $student in doc("ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml")//Student
+    return <StudentAndMentor>{ $student.Name, $student.Mentor.Name }</StudentAndMentor>
+} </Item>;
+</showtext>
+
+// Item 9. For each faculty, list his / her name, and student Name with classification and GPA of students;
+// that the faculty is mentoring. For each faculty there should be only one element, the info about students;
+// should be nested inside that element.  (Note that if $f is a faculty, $f.Mentoring will return a list of;
+// students. >>> Tip: You can iterate over this list using the for clause.);
+<showtext>
+$OOXQuery:>
+<Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> {
+    for $faculty in doc("ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml")//Faculty
+    return <StudentAndFaculty>
+    <Faculty> { $faculty.Name } </Faculty>
+    <Students> {
+    for $student in $faculty.Mentoring
+    return
+        <StudentName>{ $student.Name, $student.Classification, $student.GPA }</StudentName>
+    } </Students>
+</StudentAndFaculty> } </Item>;
+</showtext>
+
+// Item 10. For every offering, list course name, section, and instructor name.;
+<showtext>
+$OOXQuery:>
+<Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> {
+    for $offering in doc("ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml")//Offering
+    return
+    <Offering>
+    { $offering.CourseInfo.CourseName, $offering/Section, $offering.Instructor.Name  }
+    </Offering>
+} </Item>;
 </showtext>

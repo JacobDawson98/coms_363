@@ -1,0 +1,3620 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <pre><span><font color="blue" size="3pt">// Item 1. List Names of students and their mentors.;</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+&lt;StudentAndMentor&gt;
+{
+    for $student in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student,
+        $mentor in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Instructor.xml&quot;)//Instructor[InstructorID = $student/MentorID],
+        $studentPerson in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Person.xml&quot;)//Person[ID = $student/StudentID],
+        $mentorPerson in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Person.xml&quot;)//Person[ID = $mentor/InstructorID]
+    return &lt;StudentMentor&gt;{&lt;StudentName&gt;{$studentPerson/Name}&lt;/StudentName&gt;,&lt;MentorName&gt;{$mentorPerson/Name}&lt;/MentorName&gt;}&lt;/StudentMentor&gt;
+}
+&lt;/StudentAndMentor&gt;;</font></span><br>&lt;StudentAndMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jinchao Henson&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Basaraba&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Daniel Woo&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jamie Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Todd Lu&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Omar Shahnawaz&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Yeow Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;William Stumpf&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Sameer Shah&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Brian Stumpf&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Newman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Feng Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Lin Zhou&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Yanqiu Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Carney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Randy Hellman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wen White&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Lee Andrews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Zhen Messer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chee Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Golam Bagga&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Tuyet&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Dennis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Scot Lee&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jialiang Jiang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Colleen Parcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Randy Lewis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Josh Woo&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;William Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dennis Fletcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Colleen Good&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ming Jiang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ryan Schmidt&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Golam Mohammad&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kerry Marks&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Loader&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jun Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Stumpf Andrews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Damien Martyn&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Brett Lee&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jan Harvey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jim Slater&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Daniel Hayden&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Naseer Hussain&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Michael Vaughan&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Bradley Hoggs&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dennis Patten&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Philip Simmons&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Augustin Logie&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Barry Pollock&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Neil Radford&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wilf slack&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alex Tudor&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Craig White&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jan Austin&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dave Whatmore&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jeremy Koney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Martin Crowe&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Harris&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Cairns&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Glen Turner&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Deepak Patel&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Aldin Baptist&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Poweel&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Barbara Potters&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jennifer Lowe&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Juan Rodriguez&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Marcus Trescothick&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Vikram Solanki&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ronnie Irani&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Sherear&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Rud Gullit&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Martin Vasquez&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Freeman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Emburey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Robin Smith&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Gavin Robertson&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Justin Langer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Greg Blewett&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Matthews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ray Bright&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Evan Chatfield&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Shaun Elliot&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Perminder Singh&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jacques Kallis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Donald&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;David Boon&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dean Jones&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Tom Moody&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Border&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kepler Wessels&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Peter Kirsten&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Pringle&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Craig Matthews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+   &lt;StudentMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Richard Snell&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentMentor&gt;
+&lt;/StudentAndMentor&gt;<br><br><span><font color="blue" size="3pt">// Item 2. For each classification, list the classification and the average GPA of students with that;</font></span><br><span><font color="blue" size="3pt">// classification. Your query should not use any constants, such as &quot;Freshman&quot;.;</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+    &lt;ClassAndGPA&gt;
+    {
+        for $classification in distinct-values(doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student/Classification)
+        return
+        &lt;ClassificationAvg&gt;
+        {
+            &lt;Classification&gt;
+                {$classification}
+            &lt;/Classification&gt;,
+            &lt;AvgGPA&gt;
+            {
+                avg(doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student[Classification = $classification]/GPA)
+            }
+            &lt;/AvgGPA&gt;
+        }
+        &lt;/ClassificationAvg&gt;
+    }
+    &lt;/ClassAndGPA&gt;;</font></span><br>&lt;ClassAndGPA&gt;
+   &lt;ClassificationAvg&gt;
+      &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+      &lt;AvgGPA&gt;3.1503999999999994&lt;/AvgGPA&gt;
+   &lt;/ClassificationAvg&gt;
+   &lt;ClassificationAvg&gt;
+      &lt;Classification&gt;Senior&lt;/Classification&gt;
+      &lt;AvgGPA&gt;3.4112500000000003&lt;/AvgGPA&gt;
+   &lt;/ClassificationAvg&gt;
+   &lt;ClassificationAvg&gt;
+      &lt;Classification&gt;Junior&lt;/Classification&gt;
+      &lt;AvgGPA&gt;3.249615384615385&lt;/AvgGPA&gt;
+   &lt;/ClassificationAvg&gt;
+   &lt;ClassificationAvg&gt;
+      &lt;Classification&gt;Freshman&lt;/Classification&gt;
+      &lt;AvgGPA&gt;3.282400000000001&lt;/AvgGPA&gt;
+   &lt;/ClassificationAvg&gt;
+&lt;/ClassAndGPA&gt;<br><br><span><font color="blue" size="3pt">// Item 3. For each enrolled student, list his/her name and his/her mentor's name.;</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+    &lt;EnrolledStudentAndMentor&gt;
+    {
+        for $enrollment in distinct-values(doc(&quot;ComS363/Projects/Datasets/DataForPart1/Enrollment.xml&quot;)//Enrollment/StudentID),
+            $student in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student[StudentID = $enrollment],
+            $mentor in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Instructor.xml&quot;)//Instructor[InstructorID = $student/MentorID],
+            $studentPerson in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Person.xml&quot;)//Person[ID = $student/StudentID],
+            $mentorPerson in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Person.xml&quot;)//Person[ID = $mentor/InstructorID]
+        return
+        &lt;StudentAndMentor&gt;
+        {
+            &lt;StudentName&gt;{$studentPerson/Name}&lt;/StudentName&gt;,
+            &lt;MentorName&gt;{$mentorPerson/Name}&lt;/MentorName&gt;
+        }
+        &lt;/StudentAndMentor&gt;
+    }
+    &lt;/EnrolledStudentAndMentor&gt;;</font></span><br>&lt;EnrolledStudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Yeow Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Sameer Shah&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Feng Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Carney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wen White&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Golam Bagga&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Loader&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Michael Vaughan&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wilf slack&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alex Tudor&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Cairns&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jennifer Lowe&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Marcus Trescothick&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Sherear&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Perminder Singh&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Donald&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Todd Lu&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Omar Shahnawaz&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Randy Lewis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Philip Simmons&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Augustin Logie&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Barry Pollock&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jan Austin&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Aldin Baptist&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Barbara Potters&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Rud Gullit&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Justin Langer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Tuyet&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jialiang Jiang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;William Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Colleen Good&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Golam Mohammad&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Stumpf Andrews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Daniel Hayden&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Glen Turner&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Greg Blewett&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Shaun Elliot&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kepler Wessels&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Peter Kirsten&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Pringle&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Lin Zhou&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kerry Marks&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Naseer Hussain&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Vikram Solanki&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Freeman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ray Bright&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Border&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Daniel Woo&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jamie Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Zhen Messer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Colleen Parcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jim Slater&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Deepak Patel&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Poweel&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Juan Rodriguez&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;William Stumpf&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Damien Martyn&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Brett Lee&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jeremy Koney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ronnie Irani&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Martin Vasquez&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;David Boon&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Craig Matthews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Richard Snell&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Lee Andrews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jan Harvey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Martin Crowe&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jacques Kallis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Brian Stumpf&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Scot Lee&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Gavin Robertson&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jinchao Henson&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Basaraba&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chee Yang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Emburey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Matthews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dean Jones&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ming Jiang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Randy Hellman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dennis Fletcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Ryan Schmidt&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Craig White&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Chris Harris&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Robin Smith&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Evan Chatfield&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Yanqiu Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Bradley Hoggs&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Tom Moody&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Neil Radford&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dennis Patten&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dave Whatmore&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Eric Dennis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jun Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Newman&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Josh Woo&lt;/Name&gt;
+      &lt;/StudentName&gt;
+      &lt;MentorName&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/MentorName&gt;
+   &lt;/StudentAndMentor&gt;
+&lt;/EnrolledStudentAndMentor&gt;<br><br><span><font color="blue" size="3pt">// Item 4. List the Names of students who have at least one A in courses they are enrolled in.
+// (Do not consider A- as an A.);</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+    &lt;StudentsWithAnA&gt;
+    {
+        for $grades in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Enrollment.xml&quot;)//Enrollment[Grade = &quot;A&quot;],
+            $studentsWithA in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student[StudentID = $grades/StudentID],
+            $person in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Person.xml&quot;)//Person[ID = $studentsWithA/StudentID]
+        return
+        &lt;AStudent&gt;
+        {
+           &lt;StudentName&gt;{$person/Name}&lt;/StudentName&gt;
+        }
+        &lt;/AStudent&gt;
+    }
+    &lt;/StudentsWithAnA&gt;;</font></span><br>&lt;StudentsWithAnA&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wen White&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jennifer Lowe&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Rud Gullit&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Justin Langer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Stumpf Andrews&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kerry Marks&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jialiang Jiang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jan Harvey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wilf slack&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Aldin Baptist&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Barry Pollock&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dean Jones&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Golam Mohammad&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Justin Langer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Naseer Hussain&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Shaun Elliot&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Alan Border&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Kepler Wessels&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jason Carney&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Zhen Messer&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jacques Kallis&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Feng Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jinchao Henson&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Dennis Fletcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Martin Vasquez&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;John Emburey&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Yeow Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Brian Stumpf&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Feng Huang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Colleen Parcher&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Wilf slack&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+   &lt;AStudent&gt;
+      &lt;StudentName&gt;
+         &lt;Name&gt;Jun Wang&lt;/Name&gt;
+      &lt;/StudentName&gt;
+   &lt;/AStudent&gt;
+&lt;/StudentsWithAnA&gt;<br><br><span><font color="blue" size="3pt">// Item 5. List the course codes of courses that are prerequisites for the course CS311.;</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+    &lt;CoursesRequireCS311&gt;
+    {
+       for $coursesWithCS311 in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Course.xml&quot;)//Course[PreReq = &quot;CS311&quot;]
+       return
+       &lt;Course&gt;
+       {
+            &lt;CourseCode&gt;{$coursesWithCS311/CourseCode}&lt;/CourseCode&gt;
+       }
+       &lt;/Course&gt;
+    }
+    &lt;/CoursesRequireCS311&gt;;</font></span><br>&lt;CoursesRequireCS311&gt;
+   &lt;Course&gt;
+      &lt;CourseCode&gt;
+         &lt;CourseCode&gt;CS321&lt;/CourseCode&gt;
+      &lt;/CourseCode&gt;
+   &lt;/Course&gt;
+   &lt;Course&gt;
+      &lt;CourseCode&gt;
+         &lt;CourseCode&gt;CS363&lt;/CourseCode&gt;
+      &lt;/CourseCode&gt;
+   &lt;/Course&gt;
+   &lt;Course&gt;
+      &lt;CourseCode&gt;
+         &lt;CourseCode&gt;CS461&lt;/CourseCode&gt;
+      &lt;/CourseCode&gt;
+   &lt;/Course&gt;
+   &lt;Course&gt;
+      &lt;CourseCode&gt;
+         &lt;CourseCode&gt;CS511&lt;/CourseCode&gt;
+      &lt;/CourseCode&gt;
+   &lt;/Course&gt;
+&lt;/CoursesRequireCS311&gt;<br><br><span><font color="blue" size="3pt">// Item 6. Restructure Student.xml by classification. There should be one element per classification in;</font></span><br><span><font color="blue" size="3pt">// which the remaining information about students should be included in one element per student.;</font></span><br><span><font color="blue" size="3pt">// (Tip: Make sure you understand Slide 12.8 titled Restructuring in XQuery).;</font></span><br><span><font color="blue" size="3pt">$Saxon:&gt;
+    &lt;StudentAndClass&gt; {
+        for $classification in distinct-values(doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student/Classification)
+        return
+        &lt;Students&gt;
+            &lt;classification&gt;{$classification}&lt;/classification&gt;
+            &lt;StudentList&gt; {
+               for $student in doc(&quot;ComS363/Projects/Datasets/DataForPart1/Student.xml&quot;)//Student[Classification=$classification]
+               return
+               &lt;Student&gt;
+                   {$student/StudentID},
+                   {$student/GPA}&gt;,
+                   {$student/MentorID},
+                   {$student/CreditHours}
+               &lt;/Student&gt;
+            } &lt;/StudentList&gt;
+        &lt;/Students&gt;
+        } &lt;/StudentAndClass&gt;;</font></span><br>&lt;StudentAndClass&gt;
+   &lt;Students&gt;
+      &lt;classification&gt;Sophomore&lt;/classification&gt;
+      &lt;StudentList&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;118784412&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.19&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;39&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;163728111&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.66&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;42&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;185141262&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.29&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;54&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;222105935&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.23&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;39&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;260369148&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.99&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;39&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;273277984&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.9&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;42&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;296669559&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;328718420&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.96&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;42&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;365774792&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;56&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;406746417&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.34&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;449976666&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.65&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;45&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;483223789&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.96&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;495490053&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;39&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;513110141&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.34&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;590987789&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.23&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;45&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;658579865&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;42&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;750913239&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.23&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;54&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;785811329&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;803024290&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;54&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;850631208&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.19&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;52&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;885469446&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;907425648&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;52&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;952145559&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;54&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;980102825&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.42&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;45&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;996056608&lt;/StudentID&gt;,
+                   &lt;GPA&gt;0.49&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;48&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+      &lt;/StudentList&gt;
+   &lt;/Students&gt;
+   &lt;Students&gt;
+      &lt;classification&gt;Senior&lt;/classification&gt;
+      &lt;StudentList&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;124208644&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;96&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;164500920&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;99&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;191083779&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;98&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;224620876&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.3&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;261812056&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.48&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;102&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;279702622&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;302335678&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.66&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;332012037&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;99&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;382109560&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;95&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;409508678&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.47&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;98&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;466094162&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;112&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;483727101&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;102&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;500094214&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;112&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;513729696&lt;/StudentID&gt;,
+                   &lt;GPA&gt;1.98&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;102&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;601496044&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;664353912&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;99&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;722131306&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;112&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;774885901&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;99&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;787422802&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;94&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;812073765&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;862952924&lt;/StudentID&gt;,
+                   &lt;GPA&gt;1.96&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;96&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;895255243&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.42&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;98&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;909334701&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.12&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;105&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;956234659&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;95&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+      &lt;/StudentList&gt;
+   &lt;/Students&gt;
+   &lt;Students&gt;
+      &lt;classification&gt;Junior&lt;/classification&gt;
+      &lt;StudentList&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;131838016&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.95&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;68&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;164776911&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;76&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;203745018&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;70&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;232820149&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.3&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;69&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;262891588&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.5&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;82&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;285719425&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.3&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;72&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;308635036&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;78&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;340502961&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;82&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;387215322&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;78&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;419180204&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;76&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;467545237&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.56&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;78&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;485619193&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.21&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;78&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;501674545&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;78&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;550658107&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.14&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;66&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;636596145&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;75&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;696302689&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.9&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;81&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;712952591&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.98&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;72&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;737972250&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;80&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;785103478&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;84&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;793034333&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.17&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;75&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;831142613&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;75&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;867910658&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;75&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;901511548&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.32&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;80&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;916916939&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.9&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;80&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;965882492&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;76&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;985954783&lt;/StudentID&gt;,
+                   &lt;GPA&gt;0.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;76&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+      &lt;/StudentList&gt;
+   &lt;/Students&gt;
+   &lt;Students&gt;
+      &lt;classification&gt;Freshman&lt;/classification&gt;
+      &lt;StudentList&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;143293833&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.46&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;170815037&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.56&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;212976207&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;252533260&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.19&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;696335701&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;271978135&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.78&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;290986112&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.23&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;18&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;315967897&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;18&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;363200537&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;27&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;391910519&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.67&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;18&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;432180765&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;12&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;477453864&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.9&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;961874958&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;12&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;490649143&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.19&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;27&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;504013895&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.98&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;997111094&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;18&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;587735656&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.45&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;25&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;644488789&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.99&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;712524758&lt;/StudentID&gt;,
+                   &lt;GPA&gt;4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;555010131&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;743991555&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.23&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;27&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;785273479&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;801166066&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.12&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;685744439&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;18&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;845037919&lt;/StudentID&gt;,
+                   &lt;GPA&gt;2.34&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;386167477&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;876550324&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.89&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;836826630&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;905922853&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.4&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;930231660&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.87&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;463249547&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;21&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;973071948&lt;/StudentID&gt;,
+                   &lt;GPA&gt;3.98&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;466388906&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+         &lt;Student&gt;
+            &lt;StudentID&gt;992485307&lt;/StudentID&gt;,
+                   &lt;GPA&gt;0.49&lt;/GPA&gt;&gt;,
+                   &lt;MentorID&gt;201586985&lt;/MentorID&gt;,
+                   &lt;CreditHours&gt;24&lt;/CreditHours&gt;
+         &lt;/Student&gt;
+      &lt;/StudentList&gt;
+   &lt;/Students&gt;
+&lt;/StudentAndClass&gt;<br><br><span><font color="blue" size="3pt">// Item 7. List the Name, and Rank of faculty who have a salary of 100K or higher.;</font></span><br><span><font color="blue" size="3pt">$OOXQuery:&gt;
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; {
+        for $faculty in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Faculty
+        where $faculty/Salary &gt;= 100000
+        return &lt;Faculty&gt; { $faculty.Name, $faculty.Rank } &lt;/Faculty&gt;
+ } &lt;/Item&gt;;</font></span><br>&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; { for $faculty in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Faculty where $faculty/Salary &gt;= 100000 return &lt;Faculty&gt; { $faculty/id($faculty/ISA/@oID)/Name , $faculty/Rank } &lt;/Faculty&gt; } &lt;/Item&gt; 
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;Rank&gt;Professor&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;Rank&gt;Reader&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;Rank&gt;Reader&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;Rank&gt;Professor&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;Rank&gt;Reader&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;Rank&gt;Professor&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+   &lt;Faculty&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;Rank&gt;Reader&lt;/Rank&gt;
+   &lt;/Faculty&gt;
+&lt;/Item&gt;<br><br><span><font color="blue" size="3pt">// Item 8. List Names of students and their mentors.;</font></span><br><span><font color="blue" size="3pt">// (Note that if $s is a student, $s.Mentor will return a faculty element);</font></span><br><span><font color="blue" size="3pt">$OOXQuery:&gt;
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; {
+    for $student in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Student
+    return &lt;StudentAndMentor&gt;{ $student.Name, $student.Mentor.Name }&lt;/StudentAndMentor&gt;
+} &lt;/Item&gt;;</font></span><br>&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; { for $student in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Student return &lt;StudentAndMentor&gt;{ $student/id($student/ISA/@oID)/Name , $student/id($student/id($student/Mentor/@oID)/ISA/@oID)/Name }&lt;/StudentAndMentor&gt; } &lt;/Item&gt; 
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jinchao Henson&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;John Basaraba&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Daniel Woo&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jamie Yang&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Todd Lu&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Omar Shahnawaz&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jason Huang&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Yeow Huang&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;William Stumpf&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Sameer Shah&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Brian Stumpf&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jason Newman&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Wee Wang&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Feng Huang&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Lin Zhou&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Eric Wang&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Yanqiu Huang&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jason Carney&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Randy Hellman&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Wen White&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Lee Andrews&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Zhen Messer&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Chee Yang&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Golam Bagga&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Wee Tuyet&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Eric Dennis&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Scot Lee&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jialiang Jiang&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Colleen Parcher&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Randy Lewis&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Josh Woo&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;William Yang&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Dennis Fletcher&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Colleen Good&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Ming Jiang&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Ryan Schmidt&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Golam Mohammad&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Kerry Marks&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Eric Loader&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jun Wang&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Stumpf Andrews&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Damien Martyn&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Brett Lee&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jan Harvey&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jim Slater&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Daniel Hayden&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Naseer Hussain&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Michael Vaughan&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Bradley Hoggs&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Dennis Patten&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Philip Simmons&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Augustin Logie&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Barry Pollock&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Neil Radford&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Wilf slack&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Alex Tudor&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Craig White&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Dave Whatmore&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jeremy Koney&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Martin Crowe&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Chris Harris&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Chris Cairns&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Glen Turner&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Deepak Patel&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Aldin Baptist&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;John Poweel&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Barbara Potters&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jennifer Lowe&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Juan Rodriguez&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Marcus Trescothick&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Vikram Solanki&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Ronnie Irani&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Alan Sherear&lt;/Name&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Rud Gullit&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Martin Vasquez&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;John Freeman&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;John Emburey&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Robin Smith&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Gavin Robertson&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Justin Langer&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Greg Blewett&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;John Matthews&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Ray Bright&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Evan Chatfield&lt;/Name&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Shaun Elliot&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Perminder Singh&lt;/Name&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jacques Kallis&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Alan Donald&lt;/Name&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;David Boon&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Dean Jones&lt;/Name&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Tom Moody&lt;/Name&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Alan Border&lt;/Name&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Kepler Wessels&lt;/Name&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Peter Kirsten&lt;/Name&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+   &lt;StudentAndMentor&gt;
+      &lt;Name&gt;Jason Briggs&lt;/Name&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/StudentAndMentor&gt;
+&lt;/Item&gt;<br><br><span><font color="blue" size="3pt">// Item 9. For each faculty, list his / her name, and student Name with classification and GPA of students;</font></span><br><span><font color="blue" size="3pt">// that the faculty is mentoring. For each faculty there should be only one element, the info about students;</font></span><br><span><font color="blue" size="3pt">// should be nested inside that element.  (Note that if $f is a faculty, $f.Mentoring will return a list of;</font></span><br><span><font color="blue" size="3pt">// students. &gt;&gt;&gt; Tip: You can iterate over this list using the for clause.);</font></span><br><span><font color="blue" size="3pt">$OOXQuery:&gt;
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; {
+    for $faculty in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Faculty
+    return &lt;StudentAndFaculty&gt;
+    &lt;Faculty&gt; { $faculty.Name } &lt;/Faculty&gt;
+    &lt;Students&gt; {
+    for $student in $faculty.Mentoring
+    return
+        &lt;StudentName&gt;{ $student.Name, $student.Classification, $student.GPA }&lt;/StudentName&gt;
+    } &lt;/Students&gt;
+&lt;/StudentAndFaculty&gt; } &lt;/Item&gt;;</font></span><br>&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; { for $faculty in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Faculty return &lt;StudentAndFaculty&gt; &lt;Faculty&gt; { $faculty/id($faculty/ISA/@oID)/Name } &lt;/Faculty&gt; &lt;Students&gt; { for $student in $faculty/id($faculty/Mentoring/@oID) return &lt;StudentName&gt;{ $student/id($student/ISA/@oID)/Name , $student/Classification , $student/GPA }&lt;/StudentName&gt; } &lt;/Students&gt; &lt;/StudentAndFaculty&gt; } &lt;/Item&gt; 
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jinchao Henson&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.19&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Omar Shahnawaz&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jason Huang&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Colleen Good&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Eric Loader&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jim Slater&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.76&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Glen Turner&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.87&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Ray Bright&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.42&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Evan Chatfield&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.32&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Seth Carney&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Daniel Woo&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.95&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Todd Lu&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.66&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;William Stumpf&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.29&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Lee Andrews&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.9&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Randy Lewis&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Ming Jiang&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Martin Vasquez&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;John Emburey&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.34&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Justin Langer&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jason Briggs&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.48&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Chad Moore&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jamie Yang&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.46&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jason Carney&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.48&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jialiang Jiang&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;William Yang&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Wilf slack&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Martin Crowe&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.9&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Chris Cairns&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.98&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Aldin Baptist&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.23&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Barbara Potters&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Vikram Solanki&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;David Boon&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.87&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Peter Kirsten&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.42&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Wee Wang&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.23&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Kerry Marks&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jun Wang&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.65&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Dave Whatmore&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.99&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Merv Hughes&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;John Poweel&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.23&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Shaun Elliot&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jacques Kallis&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.12&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Kepler Wessels&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.98&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jason Newman&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Randy Hellman&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.5&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Wee Whitteney&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Stumpf Andrews&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.88&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jan Harvey&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.96&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Daniel Hayden&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.21&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Chris Harris&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;John Freeman&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Gavin Robertson&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;1.96&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Perminder Singh&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;John Bracewell&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Sameer Shah&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Golam Bagga&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.23&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Josh Woo&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Dennis Patten&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Barry Pollock&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;1.98&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Alex Tudor&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.23&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Juan Rodriguez&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Marcus Trescothick&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Alan Sherear&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.12&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Eric Wang&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.19&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Yanqiu Huang&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.99&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Dennis Fletcher&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;2.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Bradley Hoggs&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Augustin Logie&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.34&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Neil Radford&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.14&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Alan Donald&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.9&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Philip Richards&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Lin Zhou&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.3&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Wen White&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Zhen Messer&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Wee Tuyet&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Ryan Schmidt&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.34&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Naseer Hussain&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.19&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Michael Vaughan&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jeremy Koney&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.67&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Greg Blewett&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Dean Jones&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Chee Yang&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;2.3&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Scot Lee&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Damien Martyn&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.56&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Brett Lee&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;3.9&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Ronnie Irani&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.17&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;John Matthews&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Alan Border&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+   &lt;StudentAndFaculty&gt;
+      &lt;Faculty&gt;
+         &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+      &lt;/Faculty&gt;
+      &lt;Students&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Brian Stumpf&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Feng Huang&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.3&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Eric Dennis&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.66&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Colleen Parcher&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.96&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Golam Mohammad&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.47&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Philip Simmons&lt;/Name&gt;
+            &lt;Classification&gt;Freshman&lt;/Classification&gt;
+            &lt;GPA&gt;2.98&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Craig White&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Deepak Patel&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.45&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Jennifer Lowe&lt;/Name&gt;
+            &lt;Classification&gt;Junior&lt;/Classification&gt;
+            &lt;GPA&gt;3.78&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Rud Gullit&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;3.89&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Robin Smith&lt;/Name&gt;
+            &lt;Classification&gt;Sophomore&lt;/Classification&gt;
+            &lt;GPA&gt;2.19&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+         &lt;StudentName&gt;
+            &lt;Name&gt;Tom Moody&lt;/Name&gt;
+            &lt;Classification&gt;Senior&lt;/Classification&gt;
+            &lt;GPA&gt;4&lt;/GPA&gt;
+         &lt;/StudentName&gt;
+      &lt;/Students&gt;
+   &lt;/StudentAndFaculty&gt;
+&lt;/Item&gt;<br><br><span><font color="blue" size="3pt">// Item 10. For every offering, list course name, section, and instructor name.;</font></span><br><span><font color="blue" size="3pt">$OOXQuery:&gt;
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; {
+    for $offering in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Offering
+    return
+    &lt;Offering&gt;
+    { $offering.CourseInfo.CourseName, $offering/Section, $offering.Instructor.Name  }
+    &lt;/Offering&gt;
+} &lt;/Item&gt;;</font></span><br>&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt; { for $offering in doc(&quot;ComS363/Projects/Datasets/DataForPart2/UniversityOODB(ODMG).xml&quot;)//Offering return &lt;Offering&gt; { $offering/id($offering/CourseInfo/@oID)/CourseName , $offering/Section , $offering/id($offering/id($offering/Instructor/@oID)/ISA/@oID)/Name } &lt;/Offering&gt; } &lt;/Item&gt; 
+&lt;Item xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Introduction to C++&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Data Structures in C++&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Min Tuyet&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Software Engineering&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Design and Analysis of Algorithms&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Seth Carney&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Design and Analysis of Algorithms&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Chad Moore&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Computer Architecture&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;John Bracewell&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Discrete Mathematics&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Theory of Computation&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Programming languages&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Gavin Larson&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Programming languages&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Operating Systems&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Philip Richards&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Operating Systems&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Introduction to Database Systems&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Ricky Ponting&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Database Internals&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Advanced Design and Analysis of Algorithms&lt;/CourseName&gt;
+      &lt;Section&gt;2&lt;/Section&gt;
+      &lt;Name&gt;Richard Ellison&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Introduction to Computational Geometry&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Darren Lehmann&lt;/Name&gt;
+   &lt;/Offering&gt;
+   &lt;Offering&gt;
+      &lt;CourseName&gt;Theory of Computation&lt;/CourseName&gt;
+      &lt;Section&gt;1&lt;/Section&gt;
+      &lt;Name&gt;Graeme Dilly&lt;/Name&gt;
+   &lt;/Offering&gt;
+&lt;/Item&gt;<br></pre>
+  </body>
+</html>
