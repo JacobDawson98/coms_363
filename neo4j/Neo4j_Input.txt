@@ -1,0 +1,15 @@
+tem 1. List Names of students and their mentors.
+
+Item 2. For classification "Sophomore", list the classification (Sophomore) and the average GPA of students with that classification.
+
+Item 3. For each enrolled student, list his/her name and his/her mentor's name.
+
+Item 4. List the Names of students who have at least one A in courses they are enrolled in. (Do not consider A- as an A.)
+
+Item 5. List the course codes of courses that are prerequisites for the course �CS311�.
+
+Item 6. List the Name, and Rank of faculty who have a salary of 100K or higher.
+
+Item 7. For each faculty, list his / her name, and classification and GPA of students that the faculty is mentoring.
+
+Item 8. For every offering, list course name, section, instructors' name, and enrollment.

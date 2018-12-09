@@ -1,0 +1,3 @@
+START n=node(*) OPTIONAL MATCH (n)-[r]-() delete n,r;
+
+match (n) return n
