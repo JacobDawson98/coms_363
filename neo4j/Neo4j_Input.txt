@@ -1,15 +1,35 @@
-tem 1. List Names of students and their mentors.
+Christian Eggers: linko
+Jacob Dawson: dawson
+
+Item 1. List Names of students and their mentors.
+Match(facultyPerson)<-[:F2P]-(:Faculty)-[:Mentors]->(:Student)-[:S2P]->(studentPerson)
+Return facultyPerson.Name as faculty, studentPerson.Name as student
 
 Item 2. For classification "Sophomore", list the classification (Sophomore) and the average GPA of students with that classification.
+Match(s:Student) WHERE s.Classification = "Sophomore"
+Return s.Classification, avg(s.GPA)
 
 Item 3. For each enrolled student, list his/her name and his/her mentor's name.
+Match(studentPerson)<-[:S2P]-(student)-[:Taking]->(offer)<-[:Taking]-(s:Student)<-[:Mentors]-(ment)-[:F2P]->(mentorPerson)
+Return studentPerson.Name, mentorPerson.Name
 
 Item 4. List the Names of students who have at least one A in courses they are enrolled in. (Do not consider A- as an A.)
+Match(studentPerson)<-[:S2P]-(student)-[t:Taking]->(o) WHERE t.Grade = 'A' Return DISTINCT studentPerson.Name
 
-Item 5. List the course codes of courses that are prerequisites for the course �CS311�.
+Item 5. List the course codes of courses that are prerequisites for the course CS311.
+Match(preq:Course)-[:PreReq]->(course)
+WHERE course.CourseCode='CS311'
+Return preq.CourseCode
 
 Item 6. List the Name, and Rank of faculty who have a salary of 100K or higher.
+Match(fat:Faculty)-[:F2P]->(facultyPerson)
+WHERE fat.Salary >= 100000
+Return facultyPerson.Name, fat.Rank
 
 Item 7. For each faculty, list his / her name, and classification and GPA of students that the faculty is mentoring.
+Match(facultyPerson)<-[:F2P]-(:Faculty)-[:Mentors]->(s:Student)
+Return facultyPerson.Name, s.Classification, s.GPA
 
 Item 8. For every offering, list course name, section, instructors' name, and enrollment.
+Match(enroll)<-[:Covers]-(offering)-[t:Taking]-(student)-[:Mentors]-(faculty)-[:F2P]-(facultyPerson)
+Return enroll.CourseName, offering.Section, facultyPerson.Name, offering.ID
